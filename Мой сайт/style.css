@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f172a; /* Тёмный графит */
+  color: #e2e8f0; /* Светлый текст */
+  line-height: 1.6;
+}
+
+header {
+  background: #1e293b; /* Тёмно-синий бархат */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #720026; /* Тонкая бордовая линия */
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #720026; /* Бордо */
+  letter-spacing: 0.5px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+nav a:hover {
+  color: #065f46; /* Британский зелёный */
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background: #065f46;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  max-width: 1200px;
+  margin: 110px auto 0;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-content h1 span {
+  color: #720026; /* Бордо */
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 1.8rem;
+  color: #94a3b8;
+  max-width: 500px;
+}
+
+.btn {
+  background: #720026; /* Бордо */
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #720026;
+  border: 2px solid #720026;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(114, 0, 38, 0.3);
+}
+
+.hero-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #a16207; /* Золотистый акцент */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.05);
+}
+
+.section {
+  max-width: 1200px;
+  margin: 90px auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 2.2rem;
+  color: #f1f5f9;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  width: 80px;
+  height: 3px;
+  background: #720026;
+  display: block;
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.skills-grid, .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.skill, .project {
+  background: #1e293b; /* Тёмно-синий */
+  padding: 1.8rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid #334155;
+}
+
+.skill:hover, .project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(6, 95, 70, 0.2); /* Зелёный отблеск */
+  border-color: #065f46;
+}
+
+.project img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  filter: brightness(0.9);
+  transition: filter 0.3s;
+}
+
+.project img:hover {
+  filter: brightness(1.1);
+}
+
+.contact a {
+  color: #720026;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 0;
+  border-bottom: 1px dashed #720026;
+  transition: all 0.2s;
+}
+
+.contact a:hover {
+  color: #065f46;
+  border-color: #065f46;
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem;
+  background: #0a0e1a;
+  color: #64748b;
+  margin-top: 4rem;
+  border-top: 1px solid #1e293b;
+  font-size: 0.95rem;
+}
+
+footer p::before {
+  content: "✦ ";
+  color: #a16207;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .hero-img {
+    order: -1;
+    width: 220px;
+    height: 220px;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
